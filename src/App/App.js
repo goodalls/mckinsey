@@ -56,7 +56,7 @@ class App extends Component {
         <div className="weekDays">Thu</div>
         <div className="weekDays">Fri</div>
         <div className="weekDays">Sat</div>
-        <Month daysInMonth={this.daysInMonth()} />
+        <Month daysInMonth={this.daysInMonth()} month={this.date()} />
       </div>
     );
   }

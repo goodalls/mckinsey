@@ -5,12 +5,12 @@ import './Month.css';
 export class Month extends Component {
 
   days() {
-    const {daysInMonth} = this.props;
+    const {daysInMonth, month} = this.props;
     const days = [];
     for (let i = 0; i < daysInMonth; i++) {
       days.push(i+1);
     }
-    return days.map((day)=> <Day date={day}/> );
+    return days.map((day, index)=> <Day date={day} month={month} key={index}/> );
   }
   render() {
     return (
