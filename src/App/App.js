@@ -18,6 +18,11 @@ class App extends Component {
     this.setState({events});
   }
 
+  handleClick = eventObj => {
+    
+    
+  };
+
   date() {
     const today = new Date();
     const month = today.getMonth();
@@ -62,7 +67,7 @@ class App extends Component {
         <div className="weekDays">Thu</div>
         <div className="weekDays">Fri</div>
         <div className="weekDays">Sat</div>
-        <Month daysInMonth={this.daysInMonth()} month={this.date()} events={this.state.events} />
+        <Month daysInMonth={this.daysInMonth()} month={this.date()} events={this.state.events} click={this.handleClick}/>
       </div>
     );
   }

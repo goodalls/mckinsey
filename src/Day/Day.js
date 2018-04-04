@@ -5,22 +5,19 @@ import Event from '../Event/Event';
 export class Day extends Component {
 
   addEvents() {
-    const { date, events } = this.props;
+    const { date, events , click} = this.props;
     const isEvent = events.filter(event => {
       return date == event.day;
     });
     if (isEvent.length) {
       return isEvent.map(event => {
         return (
-          <Event event={event} key={Date.now()} click={this.handleClick} />
+          <Event event={event} key={Date.now()} click={click} />
         );
       });
     }
   }
 
-  handleClick = eventObj => {
-    console.log(eventObj);
-  };
 
   render() {
     const { month, date } = this.props;
