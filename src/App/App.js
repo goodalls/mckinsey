@@ -19,11 +19,19 @@ class App extends Component {
       <div className="App">
         <header>
           <h1>{this.date()}</h1>
-          <button class="arrowLeft"></button>
-          <button>Today</button>
-          <button class="arrowright"></button>
+          <div className="navButtons">
+            <button className="arrowLeft">&#8249;</button>
+            <button className="today">Today</button>
+            <button className="arrowright">&#8250;</button>
+          </div>
         </header>
-        
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
       </div>
     );
   }

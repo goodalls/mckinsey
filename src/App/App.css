@@ -1,0 +1,22 @@
+.App {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+
+header {
+  grid-column: 1/8;
+  grid-row: 1;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.navButtons {
+  align-self: center;
+}
+
+h1 {
+  font-size: 1.5em;
+  align-self: center;
+}
