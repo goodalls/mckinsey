@@ -1,0 +1,13 @@
+.Event {
+  background-color: lightpink;
+  border: 1px solid black;
+  margin: 1px;
+}
+
+.Event:hover {
+  background-color: pink;
+}
+
+.Event h4 {
+  font-weight: bold;
+}
