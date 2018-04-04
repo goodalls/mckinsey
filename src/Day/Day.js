@@ -17,16 +17,14 @@ export class Day extends Component {
 
   addEvents() {
     const { date } = this.props;
-    let isEvent = this.state.events.filter(event => {
-      date === event.day;
+    const isEvent = this.state.events.filter(event => {
+      return date == event.day;
     });
-    console.log(isEvent);
-
-    //  if(isEvent.length) {
-    //    isEvent.map((event) => {
-    //      <Event event={event} />
-    //    })
-    //  }
+    if (isEvent.length) {
+      return isEvent.map(event => {
+        return <Event event={event} key={Date.now()} />;
+      });
+    }
   }
 
   handleClick(event) {
@@ -38,7 +36,7 @@ export class Day extends Component {
     return (
       <div className="day" onClick={this.handleClick}>
         <span className="date">{this.props.date}</span>
-        {this.addEvents}
+        {this.addEvents()}
       </div>
     );
   }
