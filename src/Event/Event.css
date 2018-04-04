@@ -11,3 +11,7 @@
 .Event h4 {
   font-weight: bold;
 }
+
+.clicked {
+  background-color: magenta;
+}

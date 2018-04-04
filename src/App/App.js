@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Month from '../Month/Month';
+import {events} from '../data';
 
 class App extends Component {
   constructor(props) {
@@ -8,8 +9,13 @@ class App extends Component {
     this.state = {
       today: new Date(),
       month: new Date().getMonth(),
-      year: new Date().getFullYear()
+      year: new Date().getFullYear(),
+      events: []
     };
+  }
+
+  componentDidMount() {
+    this.setState({events});
   }
 
   date() {
@@ -56,7 +62,7 @@ class App extends Component {
         <div className="weekDays">Thu</div>
         <div className="weekDays">Fri</div>
         <div className="weekDays">Sat</div>
-        <Month daysInMonth={this.daysInMonth()} month={this.date()} />
+        <Month daysInMonth={this.daysInMonth()} month={this.date()} events={this.state.events} />
       </div>
     );
   }

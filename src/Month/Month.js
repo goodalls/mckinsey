@@ -10,7 +10,7 @@ export class Month extends Component {
     for (let i = 0; i < daysInMonth; i++) {
       days.push(i+1);
     }
-    return days.map((day, index)=> <Day date={day} month={month} key={index}/> );
+    return days.map((day, index)=> <Day date={day} month={month} key={index} events={this.props.events}/> );
   }
   render() {
     return (
