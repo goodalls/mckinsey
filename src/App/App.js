@@ -15,13 +15,25 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({events});
+    if (!this.state.events.length){
+      this.setState({events});
+    }
   }
 
   handleClick = eventObj => {
     
-    
+    const state = this.state.events.filter(event => event.id != eventObj.id)
+    const newEvent = Object.assign({}, {...eventObj},{isClicked: !eventObj.isclicked})
+    console.log(newEvent);
+    this.setState({
+      events: [...state, newEvent]
+    })
   };
+
+  handleDblClick = () => {
+    console.log('doubleclick');
+    
+  }
 
   date() {
     const today = new Date();
@@ -67,7 +79,7 @@ class App extends Component {
         <div className="weekDays">Thu</div>
         <div className="weekDays">Fri</div>
         <div className="weekDays">Sat</div>
-        <Month daysInMonth={this.daysInMonth()} month={this.date()} events={this.state.events} click={this.handleClick}/>
+        <Month daysInMonth={this.daysInMonth()} month={this.date()} events={this.state.events} click={this.handleClick} dblClick={this.handleDblClick}/>
       </div>
     );
   }

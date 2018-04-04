@@ -20,9 +20,9 @@ export class Day extends Component {
 
 
   render() {
-    const { month, date } = this.props;
+    const { month, date, dblClick } = this.props;
     return (
-      <div className="day">
+      <div className="day" ondblclick={dblClick}>
         <span className="date">{this.props.date}</span>
         {this.addEvents()}
       </div>
