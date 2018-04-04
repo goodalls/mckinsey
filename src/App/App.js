@@ -21,9 +21,8 @@ class App extends Component {
   }
 
   handleClick = eventObj => {
-    
     const state = this.state.events.filter(event => event.id != eventObj.id)
-    const newEvent = Object.assign({}, {...eventObj},{isClicked: !eventObj.isclicked})
+    const newEvent = Object.assign({...eventObj},{isClicked: !eventObj.isclicked})
     this.setState({
       events: [...state, newEvent]
     })
