@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Day from '../Day/Day';
 import './Month.css';
 
-const Month = () => {
+export class Month extends Component {
 
-  return (
-    <div className='Month'>
-      Month
-    </div>
-  );
-};
+  days() {
+    const {daysInMonth} = this.props;
+    const days = [];
+    for (let i = 0; i < daysInMonth; i++) {
+      days.push(i+1);
+    }
+    return days.map((day)=> <Day date={day}/> );
+  }
+  render() {
+    return (
+      <div className="Month">
+        {this.days()}
+      </div>
+    );
+  }
+}
 
 export default Month;
+
