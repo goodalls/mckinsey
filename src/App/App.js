@@ -24,15 +24,24 @@ class App extends Component {
     
     const state = this.state.events.filter(event => event.id != eventObj.id)
     const newEvent = Object.assign({}, {...eventObj},{isClicked: !eventObj.isclicked})
-    console.log(newEvent);
     this.setState({
       events: [...state, newEvent]
     })
   };
 
-  handleDblClick = () => {
-    console.log('doubleclick');
-    
+  handleDblClick = (day) => {
+   const newEvent = {
+    id: 4,
+    day,
+    startTime: '1:00 pm',
+    endTime: '2:00 pm',
+    name: 'Lunch',
+    isClicked: 'false'
+    }
+    //would need to be dynamic instead of hard coded
+    const state = [...this.state.events]
+    this.setState({events: [...state, newEvent]})
+
   }
 
   date() {
